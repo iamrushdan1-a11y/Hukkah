@@ -1,3 +1,4 @@
+aurm.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AURUM SMOKE — Luxury Hookah Experience</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
+<style> 
+body{
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    /* Video styling */
+    .bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* makes it fill screen */
+      z-index: -1; /* push behind content */
+    }
+
+    /* Content on top */
+    .content {
+      position: relative;
+      z-index: 1;
+      color: white;
+      text-align: center;
+      top: 40%;
+      font-size: 2rem;
+    }
 :root{--gold:#d4af37;--gold-light:#ffd700;--gold-dark:#b8962e;--black:#0f0f0f;--black-2:#161616;--black-3:#1e1e1e;--glass:rgba(255,255,255,0.04);--glass-border:rgba(212,175,55,0.18);--text-primary:#f5f0e8;--text-muted:rgba(245,240,232,0.5);--transition:cubic-bezier(0.76,0,0.24,1)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -36,7 +64,7 @@ body{background:var(--black);color:var(--text-primary);font-family:'Inter',sans-
 
 /* ── LANDING ── */
 #page-landing{position:relative;overflow:hidden;height:100vh}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%,rgba(212,175,55,.08) 0%,transparent 60%),radial-gradient(ellipse at 20% 80%,rgba(212,175,55,.05) 0%,transparent 50%),linear-gradient(180deg,#0a0a0a 0%,#141414 50%,#0f0f0f 100%);animation:heroZoom 20s ease-in-out infinite alternate;transform-origin:center}
+.hero-bg{ blur; inset:0;background:radial-gradient(ellipse at 60% 40%,rgba(212,175,55,.08) 0%,transparent 60%),radial-gradient(ellipse at 20% 80%,rgba(191, 161, 64, 0.05) 0%,transparent 50%),linear-gradient(180deg,#0a0a0a 0%,#141414 50%,#0f0f0f 100%);animation:heroZoom 20s ease-in-out infinite alternate;transform-origin:center}
 @keyframes heroZoom{from{transform:scale(1)}to{transform:scale(1.08)}}
 .smoke-layer{position:absolute;inset:0;pointer-events:none;overflow:hidden}
 .smoke-particle{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.06) 0%,transparent 70%);animation:smokeRise var(--dur,12s) ease-in-out infinite;animation-delay:var(--delay,0s)}
@@ -288,22 +316,11 @@ body{background:var(--black);color:var(--text-primary);font-family:'Inter',sans-
   <div class="smoke-layer" id="smokeLayer"></div>
   <div class="parallax-layer" id="parallaxLayer"></div>
   <div class="hero-overlay"></div>
-  <svg class="hero-hookah" viewBox="0 0 200 380" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <ellipse cx="100" cy="50" rx="45" ry="20" fill="none" stroke="#d4af37" stroke-width="1.5" opacity=".6"/>
-    <rect x="85" y="65" width="30" height="60" rx="6" fill="none" stroke="#d4af37" stroke-width="1.5" opacity=".6"/>
-    <ellipse cx="100" cy="125" rx="50" ry="25" fill="none" stroke="#d4af37" stroke-width="1.5" opacity=".6"/>
-    <rect x="92" y="150" width="16" height="80" rx="4" fill="none" stroke="#d4af37" stroke-width="1.5" opacity=".6"/>
-    <ellipse cx="100" cy="235" rx="55" ry="28" fill="#d4af37" opacity=".05"/>
-    <ellipse cx="100" cy="235" rx="55" ry="28" fill="none" stroke="#d4af37" stroke-width="1.5" opacity=".5"/>
-    <rect x="82" y="263" width="36" height="50" rx="10" fill="none" stroke="#d4af37" stroke-width="1.5" opacity=".5"/>
-    <ellipse cx="100" cy="318" rx="40" ry="12" fill="none" stroke="#d4af37" stroke-width="1.5" opacity=".4"/>
-    <line x1="100" y1="318" x2="100" y2="355" stroke="#d4af37" stroke-width="1.5" opacity=".4"/>
-    <ellipse cx="100" cy="358" rx="30" ry="8" fill="none" stroke="#d4af37" stroke-width="1.5" opacity=".4"/>
-    <path d="M55 235 Q10 200 30 150 Q50 100 20 80" fill="none" stroke="#d4af37" stroke-width="2" opacity=".3" stroke-dasharray="6,4"/>
-    <circle cx="20" cy="78" r="8" fill="none" stroke="#d4af37" stroke-width="1.5" opacity=".4"/>
-    <path d="M95 50 Q85 30 95 15 Q105 5 100 -5" fill="none" stroke="#d4af37" stroke-width="1" opacity=".2" stroke-linecap="round"/>
-    <path d="M103 45 Q115 25 108 10" fill="none" stroke="#d4af37" stroke-width="1" opacity=".15" stroke-linecap="round"/>
-  </svg>
+     <!-- Background Video -->
+  <video autoplay muted loop class="bg-video">
+    <source src="backvideo.mp4" type="video/mp4">
+  </video>
+
   <div class="hero-content">
     <div class="hero-eyebrow">Est. 2024 · Premium Hookah Collection</div>
     <h1 class="hero-title">AURUM<br>SMOKE</h1>
